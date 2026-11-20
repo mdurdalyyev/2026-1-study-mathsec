@@ -1,0 +1,73 @@
+project:
+  title: "report"
+  output-dir: "_output"
+
+standalone: true
+self-contained: true
+
+## Generic options
+lang: ru-RU
+number-sections: true
+toc: true
+toc-title: "Содержание"
+toc-depth: 2
+
+## Crossref customization
+crossref:
+  fig-title: "Рисунок"
+  lof-title: "Список иллюстраций"
+  lot-title: "Список таблиц"
+  lol-title: "Листинги"
+
+## Bibliography
+bibliography:
+  - bib/cite.bib
+csl: _resources/csl/gost-r-7-0-5-2008-numeric.csl
+
+## Formats
+format:
+  pdf:
+    pdf-engine: xelatex
+    latex-auto-install: false
+    toc: true
+    number-sections: true
+    colorlinks: false
+    toc-depth: 2
+    lof: true
+    lot: true
+    ## I18n polyglossia
+    polyglossia-lang:
+      name: russian
+      options:
+        - spelling=modern
+        - babelshorthands=true
+    polyglossia-otherlangs:
+      name: english
+    ## Fonts
+    mainfont: "IBMPlexSerif-Regular.otf"
+    romanfont: "IBMPlexSerif-Regular.otf"
+    sansfont: "IBMPlexSans-Regular.otf"
+    monofont: "IBMPlexMono-Regular.otf"
+    mathfont: "XITSMath-Regular.otf"
+    mainfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
+    romanfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
+    sansfontoptions: Ligatures=Common,Ligatures=TeX,Scale=MatchLowercase,Scale=0.94
+    monofontoptions: Scale=MatchLowercase,Scale=0.94,FakeStretch=0.9
+    documentclass: scrreprt
+    papersize: a4
+    fontsize: 12pt
+    linestretch: 1.5
+    cite-method: biblatex
+    biblatexoptions:
+      - backend=biber
+      - langhook=extras
+      - autolang=other*
+    csquotes: true
+    indent: true
+    include-in-header:
+      - file: _assets/preamble.tex
+
+  docx:
+    toc: true
+    number-sections: true
+    toc-depth: 2
